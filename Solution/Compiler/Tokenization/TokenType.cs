@@ -12,13 +12,13 @@ namespace Compiler.Tokenization
     public enum TokenType
     {
         // non-terminals
-        IntLiteral, Identifier, Operator, CharLiteral, 
+        IntLiteral, Identifier, Operator, CharLiteral,
 
         // reserved words - terminals
-        Begin, Const, Do, Else, End, If, In, Let, Then, Var, While,
+        Begin, Const, Do, Else, End, If, In, Let, Then, Var, While, Pass, Repeat, Until, Unless, Local,
 
         // punctuation - terminals (Becomes is for assignment (:=) , Is is for constants (~))
-        Colon, Semicolon, Becomes, Is, LeftBracket, RightBracket,
+        Colon, Semicolon, Becomes, Is, LeftBracket, RightBracket, LeftBrace, RightBrace, EqualEquals,
 
         // special tokens
         EndOfText, Error
@@ -35,16 +35,21 @@ namespace Compiler.Tokenization
         public static ImmutableDictionary<string, TokenType> Keywords { get; } = new Dictionary<string, TokenType>()
         {
             { "begin", Begin },
-            { "const", Const },
-            { "do", Do },
-            { "else", Else },
-            { "end", End },
+            /// New Mini Square code 
+            { "pass", Pass },
             { "if", If },
-            { "in", In },
-            { "let", Let },
             { "then", Then },
-            { "var", Var },
+            { "else", Else },
             { "while", While },
+            { "do", Do },
+            { "repeat", Repeat },
+            { "until", Until },
+            { "let", Let },
+            { "local", Local },
+            { "in", In },
+            { "var", Var },
+            
+
         }.ToImmutableDictionary();
 
         /// <summary>
