@@ -264,6 +264,7 @@ namespace Compiler.Tokenization
         /// <returns>True if and only if the character is an operator in the language</returns>
         private bool IsOperator(char c)
         {
+            // Changed this from a switch case for performance sake and make it simple 
             return c == '+' || c == '-' || c == '*' ||
                 c == '/' || c == '<' || c == '>' ||
                 c == '\\' || c == '|' || c == '&';
