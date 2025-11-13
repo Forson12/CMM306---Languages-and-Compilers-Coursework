@@ -121,14 +121,19 @@ namespace Compiler.SyntacticAnalysis
             {
                 case Identifier:
                     return ParseAssignmentOrCallCommand();
-                case Begin:
-                    return ParseBeginCommand();
+                case Pass:
+                    Position pos = CurrentToken.Position;
+                    Accept(Pass);
+                    return new BlankCommandNode(pos); 
                 case Let:
                     return ParseLetCommand();
                 case If:
                     return ParseIfCommand();
                 case While:
                     return ParseWhileCommand();
+                case LeftBrace:
+                    return ParseBlockCommand();
+
                 default:
                     return ParseSkipCommand();
             }
@@ -151,10 +156,10 @@ namespace Compiler.SyntacticAnalysis
                 Accept(RightBracket);
                 return new CallCommandNode(identifier, parameter);
             }
-            else if (CurrentToken.Type == Becomes)
+            else if (CurrentToken.Type == EqualEquals)
             {
                 Debugger.Write("Parsing Assignment Command");
-                Accept(Becomes);
+                Accept(EqualEquals);
                 IExpressionNode expression = ParseExpression();
                 return new AssignCommandNode(identifier, expression);
             }
@@ -517,6 +522,15 @@ namespace Compiler.SyntacticAnalysis
             Token OperatorToken = CurrentToken;
             Accept(Operator);
             return new OperatorNode(OperatorToken);
+        }
+
+        private ICommandNode ParseBlockCommand()
+        {
+            Debugger.Write("Parsing Block Command");
+            Accept(LeftBrace);
+            ICommandNode command = ParseCommand();
+            Accept(RightBrace);
+            return command;
         }
     }
 }
