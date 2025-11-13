@@ -104,24 +104,43 @@ namespace Compiler.Tokenization
         private TokenType ScanToken()
         {
             TokenSpelling.Clear();
-            if (char.IsLetter(Reader.Current))
+            // Identifier 
+            if (char.IsLetter(Reader.Current) || Reader.Current == '_')
             {
-                // Reading an identifier
+                // Take the First character 
                 TakeIt();
-                while (char.IsLetterOrDigit(Reader.Current))
+            
+                // Subsequent characters: letter, underscore, dash
+                while (char.IsLetter(Reader.Current) ||
+                    Reader.Current == '_' ||
+                    Reader.Current == '-')
                     TakeIt();
+            
+                // Keyword or identifier?
                 if (TokenTypes.IsKeyword(TokenSpelling))
                     return TokenTypes.GetTokenForKeyword(TokenSpelling);
                 else
                     return TokenType.Identifier;
             }
+            // Integer Literal 
             else if (char.IsDigit(Reader.Current))
             {
                 // Reading an integer
                 TakeIt();
-                while (char.IsDigit(Reader.Current))
+                while (char.IsDigit(Reader.Current) || Reader.Current == '_')
                     TakeIt();
                 return TokenType.IntLiteral;
+            }
+            // == OR =
+            else if (Reader.Current == '=')
+            {
+                TakeIt();
+                if (Reader.Current == '=')
+                {
+                    TakeIt();
+                    return TokenType.EqualEquals;
+                }
+                return TokenType.Operator;  // single '=' is a normal operator
             }
             else if (IsOperator(Reader.Current))
             {
@@ -168,21 +187,40 @@ namespace Compiler.Tokenization
                 TakeIt();
                 return TokenType.RightBracket;
             }
-            else if (Reader.Current == '\'')
+            else if (Reader.Current == '{')
             {
-                // Read a '
+                // Read {
                 TakeIt();
-                // Take whatever the character is
+                return TokenType.LeftBrace;
+            }
+            else if (Reader.Current == '}')
+            {
+                // Read }
                 TakeIt();
-                // Try getting the closing '
-                if (Reader.Current == '\'')
+                return TokenType.RightBrace;
+            }
+            else if (Reader.Current == '"')
+            {
+                // Take the opening "
+                TakeIt();
+
+                //the closing '
+                if (Reader.Current == '"' || Reader.Current != '\n' || Reader.Current != default(char))
+                {
+                    // Empty "" or in this case an invalid char
+                    return TokenType.Error;
+                }
+
+                TakeIt();
+
+                // Expecting closing " 
+                if (Reader.Current == '"')
                 {
                     TakeIt();
                     return TokenType.CharLiteral;
                 }
-                else
+                else 
                 {
-                    // Could do some better error handling here but we weren't asked to
                     return TokenType.Error;
                 }
             }
@@ -224,22 +262,11 @@ namespace Compiler.Tokenization
         /// </summary>
         /// <param name="c">The character to check</param>
         /// <returns>True if and only if the character is an operator in the language</returns>
-        private static bool IsOperator(char c)
+        private bool IsOperator(char c)
         {
-            switch (c)
-            {
-                case '+':
-                case '-':
-                case '*':
-                case '/':
-                case '<':
-                case '>':
-                case '=':
-                case '\\':
-                    return true;
-                default:
-                    return false;
-            }
+            return c == '+' || c == '-' || c == '*' ||
+                c == '/' || c == '<' || c == '>' ||
+                c == '\\' || c == '|' || c == '&';
         }
     }
 }
