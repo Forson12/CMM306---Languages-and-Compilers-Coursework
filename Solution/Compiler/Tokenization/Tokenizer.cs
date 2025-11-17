@@ -148,32 +148,11 @@ namespace Compiler.Tokenization
                 TakeIt();
                 return TokenType.Operator;
             }
-            else if (Reader.Current == ':')
-            {
-                // Read an :
-                // Is it a : or a :=
-                TakeIt();
-                if (Reader.Current == '=')
-                {
-                    TakeIt();
-                    return TokenType.Becomes;
-                }
-                else
-                {
-                    return TokenType.Colon;
-                }
-            }
             else if (Reader.Current == ';')
             {
                 // Read a ;
                 TakeIt();
                 return TokenType.Semicolon;
-            }
-            else if (Reader.Current == '~')
-            {
-                // Read a ~
-                TakeIt();
-                return TokenType.Is;
             }
             else if (Reader.Current == '(')
             {

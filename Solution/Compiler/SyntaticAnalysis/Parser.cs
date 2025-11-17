@@ -1,5 +1,6 @@
 ﻿using Compiler.IO;
 using Compiler.Nodes;
+using Compiler.Nodes.CommandNodes;
 using Compiler.Tokenization;
 using System.Collections.Generic;
 using static Compiler.Tokenization.TokenType;
@@ -124,18 +125,24 @@ namespace Compiler.SyntacticAnalysis
                 case Pass:
                     Position pos = CurrentToken.Position;
                     Accept(Pass);
-                    return new BlankCommandNode(pos); 
+                    return new BlankCommandNode(pos);
                 case Let:
                     return ParseLetCommand();
                 case If:
                     return ParseIfCommand();
                 case While:
                     return ParseWhileCommand();
+                case Repeat:
+                    return ParseRepeatCommand();
+                case Unless:
+                    return ParseUnlessCommand();
                 case LeftBrace:
                     return ParseBlockCommand();
 
                 default:
-                    return ParseSkipCommand();
+                    //return ParseSkipCommand();
+                    Reporter.ReportError("Invalid Command");
+                    return new ErrorNode(CurrentToken.Position);
             }
         }
 
@@ -221,26 +228,12 @@ namespace Compiler.SyntacticAnalysis
             Debugger.Write("Parsing Let Command");
             Position startPosition = CurrentToken.Position;
             Accept(Let);
+            Accept(Local);
             IDeclarationNode declaration = ParseDeclaration();
             Accept(In);
             ICommandNode command = ParseSingleCommand();
             return new LetCommandNode(declaration, command, startPosition);
         }
-
-        /// <summary>
-        /// Parses a begin command
-        /// </summary>
-        /// <returns>An abstract syntax tree representing the begin command</returns>
-        private ICommandNode ParseBeginCommand()
-        {
-            Debugger.Write("Parsing Begin Command");
-            Accept(Begin);
-            ICommandNode command = ParseCommand();
-            Accept(End);
-            return command;
-        }
-
-
 
         /// <summary>
         /// Parses a declaration
@@ -249,13 +242,20 @@ namespace Compiler.SyntacticAnalysis
         private IDeclarationNode ParseDeclaration()
         {
             Debugger.Write("Parsing Declaration");
+            // Collect all single declarations into a list
             List<IDeclarationNode> declarations = new List<IDeclarationNode>();
+
+            // First do the single-declaration
             declarations.Add(ParseSingleDeclaration());
+
+            // then to any ones seperated by ';'
             while (CurrentToken.Type == Semicolon)
             {
                 Accept(Semicolon);
                 declarations.Add(ParseSingleDeclaration());
             }
+
+            // If there is only one declaration then no need to wrap it
             if (declarations.Count == 1)
                 return declarations[0];
             else
@@ -269,61 +269,53 @@ namespace Compiler.SyntacticAnalysis
         private IDeclarationNode ParseSingleDeclaration()
         {
             Debugger.Write("Parsing Single Declaration");
-            switch (CurrentToken.Type)
+            Position pos = CurrentToken.Position;
+
+            // Must start with an identifier always
+            if (CurrentToken.Type != Identifier)
             {
-                case Const:
-                    return ParseConstDeclaration();
-                case Var:
-                    return ParseVarDeclaration();
-                default:
-                    return new ErrorNode(CurrentToken.Position);
+                Reporter.ReportError("Declaration must start with an identifier");
+                return new ErrorNode(pos);
             }
+
+            // First identifier — could be:
+            //   - type-denoter for a var declaration
+            //   - constant name for a const declaration
+            IdentifierNode firstId = ParseIdentifier();
+
+            // CASE 1 — CONST DECLARATION:   <identifier> == <expression>
+            // If the next token is ==, this is CONST.
+            if (CurrentToken.Type == EqualEquals)
+            {
+                Accept(EqualEquals);
+                IExpressionNode expr = ParseExpression();
+                return new ConstDeclarationNode(firstId, expr, pos);
+            }
+
+            // OTHERWISE: VAR DECLARATION:   <type-denoter> <identifier>
+            // next token MUST be an identifier (the variable name)
+            if (CurrentToken.Type == Identifier)
+            {
+                IdentifierNode varId = ParseIdentifier();
+                TypeDenoterNode type = new TypeDenoterNode(firstId);
+                return new VarDeclarationNode(varId, type, pos);
+            }
+
+            // NO MATCH  ERROR
+            Reporter.ReportError("Invalid declaration syntax");
+            return new ErrorNode(pos);
         }
-
-        /// <summary>
-        /// Parses a constant declaration
-        /// </summary>
-        /// <returns>An abstract syntax tree representing the constant declaration</returns>
-        private IDeclarationNode ParseConstDeclaration()
-        {
-            Debugger.Write("Parsing Constant Declaration");
-            Position StartPosition = CurrentToken.Position;
-            Accept(Const);
-            IdentifierNode identifier = ParseIdentifier();
-            Accept(Is);
-            IExpressionNode expression = ParseExpression();
-            return new ConstDeclarationNode(identifier, expression, StartPosition);
-        }
-
-        /// <summary>
-        /// Parses a variable declaration
-        /// </summary>
-        /// <returns>An abstract syntax tree representing the variable declaration</returns>
-        private IDeclarationNode ParseVarDeclaration()
-        {
-            Debugger.Write("Parsing Variable Declaration");
-            Position StartPosition = CurrentToken.Position;
-            Accept(Var);
-            IdentifierNode identifier = ParseIdentifier();
-            Accept(Colon);
-            TypeDenoterNode typeDenoter = ParseTypeDenoter();
-            return new VarDeclarationNode(identifier, typeDenoter, StartPosition);
-        }
-
-
 
         /// <summary>
         /// Parses a type denoter
         /// </summary>
         /// <returns>An abstract syntax tree representing the type denoter</returns>
-        private TypeDenoterNode ParseTypeDenoter()
-        {
-            Debugger.Write("Parsing Type Denoter");
-            IdentifierNode identifier = ParseIdentifier();
-            return new TypeDenoterNode(identifier);
-        }
-
-
+        //private TypeDenoterNode ParseTypeDenoter()
+        //{
+        //    Debugger.Write("Parsing Type Denoter");
+        //    IdentifierNode identifier = ParseIdentifier();
+        //    return new TypeDenoterNode(identifier);
+        //}
 
         /// <summary>
         /// Parses an expression
@@ -524,6 +516,10 @@ namespace Compiler.SyntacticAnalysis
             return new OperatorNode(OperatorToken);
         }
 
+        /// <summary>
+        /// Parses an operator
+        /// </summary>
+        /// <returns>An abstract syntax tree representing the command</returns>
         private ICommandNode ParseBlockCommand()
         {
             Debugger.Write("Parsing Block Command");
@@ -532,5 +528,38 @@ namespace Compiler.SyntacticAnalysis
             Accept(RightBrace);
             return command;
         }
+
+        /// <summary>
+        /// Parses Repeat 
+        /// </summary>
+        /// <returns>An abstract syntax tree representing the RepeatCommandNode</returns>
+        private ICommandNode ParseRepeatCommand()
+        {
+            Debugger.Write("Parsing Repeat Command");
+            Position startPosition = CurrentToken.Position;
+            Accept(Repeat);
+            ICommandNode commandBody = ParseSingleCommand();
+            Accept(Until);
+            // parse condition/expression
+            IExpressionNode condition = ParseExpression();
+            return new RepeatCommandNode(commandBody, condition, startPosition);
+        }
+
+        /// <summary>
+        /// Parses Unless 
+        /// </summary>
+        /// <returns>An abstract syntax tree representing the UnlessCommandNode</returns>
+        private ICommandNode ParseUnlessCommand()
+        {
+            Debugger.Write("Parsing Unless Command");
+            Position position = CurrentToken.Position;
+            Accept(Unless);
+            // parse condition/expression
+            IExpressionNode condition = ParseExpression();
+            Accept(Do);
+            ICommandNode commandBody = ParseSingleCommand();
+            return new UnlessCommandNode(condition, commandBody, position);
+        }
+
     }
 }

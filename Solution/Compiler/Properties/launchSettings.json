@@ -2,8 +2,8 @@
   "profiles": {
     "Compiler": {
       "commandName": "Project",
-      "commandLineArgs": "example_chars.tri example_chars.tam example_chars.txt",
-      "workingDirectory": "../"
+      "commandLineArgs": "myprogram.tri myprogram.tam myprogram.txt",
+      "workingDirectory": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution"
     }
   }
 }

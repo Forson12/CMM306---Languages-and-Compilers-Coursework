@@ -15,10 +15,10 @@ namespace Compiler.Tokenization
         IntLiteral, Identifier, Operator, CharLiteral,
 
         // reserved words - terminals
-        Begin, Const, Do, Else, End, If, In, Let, Then, Var, While, Pass, Repeat, Until, Unless, Local,
+        Const, Do, Else, If, In, Let, Then, Var, While, Pass, Repeat, Until, Unless, Local,
 
         // punctuation - terminals (Becomes is for assignment (:=) , Is is for constants (~))
-        Colon, Semicolon, Becomes, Is, LeftBracket, RightBracket, LeftBrace, RightBrace, EqualEquals,
+        Semicolon, LeftBracket, RightBracket, LeftBrace, RightBrace, EqualEquals,
 
         // special tokens
         EndOfText, Error
@@ -34,7 +34,6 @@ namespace Compiler.Tokenization
         /// </summary>
         public static ImmutableDictionary<string, TokenType> Keywords { get; } = new Dictionary<string, TokenType>()
         {
-            { "begin", Begin },
             /// New Mini Square code 
             { "pass", Pass },
             { "if", If },

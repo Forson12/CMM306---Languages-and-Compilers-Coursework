@@ -85,35 +85,42 @@ namespace Compiler
             if (Reporter.HasErrors) return;
             WriteLine("Done");
 
+            // Debug: Print tokens 
+            foreach (var token in tokens)
+            {
+                Console.WriteLine(token);
+            }  
+
             // Parse
             Write("Parsing...");
             ProgramNode tree = Parser.Parse(tokens);
             if (Reporter.HasErrors) return;
             WriteLine("Done");
-
+            WriteLine(TreePrinter.ToString(tree));
+                
             // Identify
-            Write("Identifying...");
-            Identifier.PerformIdentification(tree);
-            if (Reporter.HasErrors) return;
-            WriteLine("Done");
+            //Write("Identifying...");
+            //Identifier.PerformIdentification(tree);
+            //if (Reporter.HasErrors) return;
+            //WriteLine("Done");
 
-            // Type check
-            Write("Type Checking...");
-            Checker.PerformTypeChecking(tree);
-            if (Reporter.HasErrors) return;
-            WriteLine("Done");
+            //// Type check
+            //Write("Type Checking...");
+            //Checker.PerformTypeChecking(tree);
+            //if (Reporter.HasErrors) return;
+            //WriteLine("Done");
 
             // Code generation
-            Write("Generating code...");
-            TargetCode targetCode = Generator.GenerateCodeFor(tree);
-            if (Reporter.HasErrors) return;
-            WriteLine("Done");
+            //Write("Generating code...");
+            //TargetCode targetCode = Generator.GenerateCodeFor(tree);
+            //if (Reporter.HasErrors) return;
+            //WriteLine("Done");
 
-            // Output
-            Write("Writing to file...");
-            Writer.WriteToFiles(targetCode);
-            if (Reporter.HasErrors) return;
-            WriteLine("Done");
+            //Output
+            //Write("Writing to file...");
+            //Writer.WriteToFiles(targetCode);
+            //if (Reporter.HasErrors) return;
+            //WriteLine("Done");
         }
 
         /// <summary>
@@ -133,6 +140,7 @@ namespace Compiler
         /// <param name="args">Should be three arguments - input file (*.tri), binary output file (*.tam), text output file (*.txt)</param>
         public static void Main(string[] args)
         {
+            Console.WriteLine(Environment.CurrentDirectory);
             if (args == null || args.Length != 3 || args[0] == null || args[1] == null || args[2] == null)
                 WriteLine("ERROR: Must call the program with exactly three arguments - input file (*.tri), binary output file (*.tam), text output file (*.txt)");
             else if (!File.Exists(args[0]))
@@ -147,6 +155,7 @@ namespace Compiler
                 compiler.Compile();
                 compiler.WriteFinalMessage();
             }
+            Console.WriteLine("CurrentDirectory: " + Environment.CurrentDirectory);
         }
     }
 }

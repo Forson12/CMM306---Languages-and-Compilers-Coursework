@@ -1,0 +1,189 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\compiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\compiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\compiler.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\compiler.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\tokenization\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\tokenization\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\tokenization\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\tokenization\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\syntaticanalysis\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\syntaticanalysis\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\tokenization\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\tokenization\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\nodes\\interfaces\\itypednode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\nodes\\interfaces\\itypednode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\nodes\\interfaces\\ivariabledeclarationnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\nodes\\interfaces\\ivariabledeclarationnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\nodes\\commandnodes\\unlesscommandnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\nodes\\commandnodes\\unlesscommandnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\solution\\compiler\\nodes\\commandnodes\\repeatcommandnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\nodes\\commandnodes\\repeatcommandnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 212,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Compiler",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Compiler.csproj",
+              "RelativeDocumentMoniker": "Compiler\\Compiler.csproj",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Compiler.csproj",
+              "RelativeToolTip": "Compiler\\Compiler.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-17T18:54:34.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Compiler.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Compiler.cs",
+              "RelativeDocumentMoniker": "Compiler\\Compiler.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Compiler.cs",
+              "RelativeToolTip": "Compiler\\Compiler.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAA8wHYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T18:37:19.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TokenType.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Tokenization\\TokenType.cs",
+              "RelativeDocumentMoniker": "Compiler\\Tokenization\\TokenType.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Tokenization\\TokenType.cs",
+              "RelativeToolTip": "Compiler\\Tokenization\\TokenType.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwBoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T18:09:48.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IVariableDeclarationNode.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\Interfaces\\IVariableDeclarationNode.cs",
+              "RelativeDocumentMoniker": "Compiler\\Nodes\\Interfaces\\IVariableDeclarationNode.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\Interfaces\\IVariableDeclarationNode.cs",
+              "RelativeToolTip": "Compiler\\Nodes\\Interfaces\\IVariableDeclarationNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T17:27:08.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ITypedNode.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\Interfaces\\ITypedNode.cs",
+              "RelativeDocumentMoniker": "Compiler\\Nodes\\Interfaces\\ITypedNode.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\Interfaces\\ITypedNode.cs",
+              "RelativeToolTip": "Compiler\\Nodes\\Interfaces\\ITypedNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T17:25:53.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UnlessCommandNode.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\CommandNodes\\UnlessCommandNode.cs",
+              "RelativeDocumentMoniker": "Compiler\\Nodes\\CommandNodes\\UnlessCommandNode.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\CommandNodes\\UnlessCommandNode.cs",
+              "RelativeToolTip": "Compiler\\Nodes\\CommandNodes\\UnlessCommandNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T16:54:10.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RepeatCommandNode.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\CommandNodes\\RepeatCommandNode.cs",
+              "RelativeDocumentMoniker": "Compiler\\Nodes\\CommandNodes\\RepeatCommandNode.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Nodes\\CommandNodes\\RepeatCommandNode.cs",
+              "RelativeToolTip": "Compiler\\Nodes\\CommandNodes\\RepeatCommandNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T16:46:51.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Token.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Tokenization\\Token.cs",
+              "RelativeDocumentMoniker": "Compiler\\Tokenization\\Token.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Tokenization\\Token.cs",
+              "RelativeToolTip": "Compiler\\Tokenization\\Token.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T17:53:58.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Tokenizer.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Tokenization\\Tokenizer.cs",
+              "RelativeDocumentMoniker": "Compiler\\Tokenization\\Tokenizer.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\Tokenization\\Tokenizer.cs",
+              "RelativeToolTip": "Compiler\\Tokenization\\Tokenizer.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAvwCoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T17:53:59.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Parser.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\SyntaticAnalysis\\Parser.cs",
+              "RelativeDocumentMoniker": "Compiler\\SyntaticAnalysis\\Parser.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\Solution\\Compiler\\SyntaticAnalysis\\Parser.cs",
+              "RelativeToolTip": "Compiler\\SyntaticAnalysis\\Parser.cs",
+              "ViewState": "AgIAABUBAAAAAAAAAAAnwCMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T16:10:25.88Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

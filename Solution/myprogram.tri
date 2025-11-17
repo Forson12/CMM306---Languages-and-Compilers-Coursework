@@ -1,0 +1,7 @@
+let local
+    int x;
+    y == 10
+in
+    repeat
+        x == x + 1
+    until x > y
