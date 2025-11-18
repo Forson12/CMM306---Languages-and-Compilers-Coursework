@@ -425,21 +425,27 @@ namespace Compiler.SyntacticAnalysis
         private IParameterNode ParseParameter()
         {
             Debugger.Write("Parsing Parameter");
-            switch (CurrentToken.Type)
-            {
-                case Identifier:
-                case IntLiteral:
-                case CharLiteral:
-                case Operator:
-                case LeftBracket:
-                    return ParseExpressionParameter();
-                case Var:
-                    return ParseVarParameter();
-                case RightBracket:
-                    return new BlankParameterNode(CurrentToken.Position);
-                default:
-                    return new ErrorNode(CurrentToken.Position);
-            }
+            //switch (CurrentToken.Type)
+            //{
+            //    case Identifier:
+            //    case IntLiteral:
+            //    case CharLiteral:
+            //    case Operator:
+            //    case LeftBracket:
+            //        return ParseExpressionParameter();
+            //    case Var:
+            //        return ParseVarParameter();
+            //    case RightBracket:
+            //        return new BlankParameterNode(CurrentToken.Position);
+            //    default:
+            //        return new ErrorNode(CurrentToken.Position);
+            //}
+
+            if(CurrentToken.Type == RightBracket)
+                return new BlankParameterNode(CurrentToken.Position);
+
+            // Otherwise return a normal expression 
+            return ParseExpressionParameter();
         }
 
         /// <summary>
@@ -452,21 +458,6 @@ namespace Compiler.SyntacticAnalysis
             IExpressionNode expression = ParseExpression();
             return new ExpressionParameterNode(expression);
         }
-
-        /// <summary>
-        /// Parses a variable parameter
-        /// </summary>
-        /// <returns>An abstract syntax tree representing the variable parameter</returns>
-        private IParameterNode ParseVarParameter()
-        {
-            Debugger.Write("Parsing Variable Parameter");
-            Position startPosition = CurrentToken.Position;
-            Accept(Var);
-            IdentifierNode identifier = ParseIdentifier();
-            return new VarParameterNode(identifier, startPosition);
-        }
-
-
 
         /// <summary>
         /// Parses an integer literal
