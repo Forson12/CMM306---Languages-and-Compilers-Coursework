@@ -1,5 +1,6 @@
 ﻿using Compiler.IO;
 using Compiler.Nodes;
+using Compiler.Nodes.CommandNodes;
 using Compiler.Tokenization;
 using System.Collections.Generic;
 using System.Reflection;
@@ -254,16 +255,6 @@ namespace Compiler.SemanticAnalysis
             PerformIdentification(expressionParameter.Expression);
         }
 
-        /// <summary>
-        /// Carries out identification on a var parameter node
-        /// </summary>
-        /// <param name="varParameter">The node to perform identification on</param>
-        private void PerformIdentificationOnVarParameter(VarParameterNode varParameter)
-        {
-            PerformIdentification(varParameter.Identifier);
-        }
-
-
 
         /// <summary>
         /// Carries out identification on a type denoter node
@@ -310,6 +301,26 @@ namespace Compiler.SemanticAnalysis
         {
             IDeclarationNode declaration = SymbolTable.Retrieve(operation.OperatorToken.Spelling);
             operation.Declaration = declaration;
+        }
+
+        /// <summary>
+        /// Carries out identification on an repeat node
+        /// </summary>
+        /// <param name="node">The node to perform identification on</param>
+        private void PerformIdentificationOnRepeatCommand(RepeatCommandNode node)
+        {
+            PerformIdentification(node.Body);
+            PerformIdentification(node.Condition);
+        }
+
+        /// <summary>
+        /// Carries out identification on an Unless node
+        /// </summary>
+        /// <param name="node">The node to perform identification on</param>
+        private void PerformIdentificationOnUnlessCommand(UnlessCommandNode node)
+        {
+            PerformIdentification(node.Condition);
+            PerformIdentification(node.Body);
         }
     }
 }

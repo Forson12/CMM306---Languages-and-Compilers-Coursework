@@ -1,5 +1,6 @@
 ﻿using Compiler.IO;
 using Compiler.Nodes;
+using Compiler.Nodes.CommandNodes;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -217,9 +218,15 @@ namespace Compiler.SemanticAnalysis
         /// <param name="constDeclaration"The node to perform type checking on></param>
         private void PerformTypeCheckingOnConstDeclaration(ConstDeclarationNode constDeclaration)
         {
-            PerformTypeChecking(constDeclaration.Identifier);
+            //PerformTypeChecking(constDeclaration.Identifier);
+
+            // Type check the expression
             PerformTypeChecking(constDeclaration.Expression);
+
+            // Assign the inferred type to the const identifier 
+            constDeclarationT = constDeclaration.Expression.Type;
         }
+
 
         /// <summary>
         /// Carries out type checking on a sequential declaration node
@@ -372,18 +379,18 @@ namespace Compiler.SemanticAnalysis
         /// Carries out type checking on a var parameter node
         /// </summary>
         /// <param name="varParameter">The node to perform type checking on</param>
-        private void PerformTypeCheckingOnVarParameter(VarParameterNode varParameter)
-        {
-            PerformTypeChecking(varParameter.Identifier);
-            if (!(varParameter.Identifier.Declaration is IVariableDeclarationNode varDeclaration))
-            {
-                Reporter.ReportError($"Trying to pass something which is not a variable to a function's var parameter " +
-                    $"at line {varParameter.Position.LineNumber}, column {varParameter.Position.PositionInLine}" +
-                    $": {varParameter.Identifier.IdentifierToken.Spelling}");
-            }
-            else
-                varParameter.Type = varDeclaration.EntityType;
-        }
+        //private void PerformTypeCheckingOnVarParameter(VarParameterNode varParameter)
+        //{
+        //    PerformTypeChecking(varParameter.Identifier);
+        //    if (!(varParameter.Identifier.Declaration is IVariableDeclarationNode varDeclaration))
+        //    {
+        //        Reporter.ReportError($"Trying to pass something which is not a variable to a function's var parameter " +
+        //            $"at line {varParameter.Position.LineNumber}, column {varParameter.Position.PositionInLine}" +
+        //            $": {varParameter.Identifier.IdentifierToken.Spelling}");
+        //    }
+        //    else
+        //        varParameter.Type = varDeclaration.EntityType;
+        //}
 
 
 
@@ -490,6 +497,45 @@ namespace Compiler.SemanticAnalysis
         private static SimpleTypeDeclarationNode GetReturnType(FunctionTypeDeclarationNode node)
         {
             return node.ReturnType;
+        }
+
+
+        /// <summary>
+        /// Carries out type checking on an operation node
+        /// </summary>
+        /// <param name="operation">The node to perform type checking on</param>
+        private void PerformTypeCheckingOnRepeatCommand(RepeatCommandNode repeat)
+        {
+            // Type check the body
+            PerformTypeChecking(repeat.Body);
+
+            // Type check the expression
+            PerformTypeChecking(repeat.Condition);
+
+            // Expression must be bool
+            if (repeat.Condition.Type != StandardEnvironment.BooleanType)
+            {
+                Reporter.ReportError(
+                    $"Condition in repeat-until command is not a boolean " +
+                    $"at line {repeat.Position.LineNumber}, column {repeat.Position.PositionInLine}"
+                );
+            }
+        }
+
+
+
+        private void PerformTypeCheckingOnUnlessCommand(UnlessCommandNode unlessNode)
+        {
+            PerformTypeChecking(unlessNode.Condition);
+            PerformTypeChecking(unlessNode.Body);
+
+            if (unlessNode.Condition.Type != StandardEnvironment.BooleanType)
+            {
+                Reporter.ReportError(
+                    $"Condition in unless command is not a boolean " +
+                    $"at line {unlessNode.Position.LineNumber}, column {unlessNode.Position.PositionInLine}"
+                );
+            }
         }
     }
 }
