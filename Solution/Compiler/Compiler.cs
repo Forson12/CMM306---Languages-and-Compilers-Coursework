@@ -97,12 +97,13 @@ namespace Compiler
             if (Reporter.HasErrors) return;
             WriteLine("Done");
             WriteLine(TreePrinter.ToString(tree));
-                
+
             // Identify
-            //Write("Identifying...");
-            //Identifier.PerformIdentification(tree);
-            //if (Reporter.HasErrors) return;
-            //WriteLine("Done");
+            Write("Identifying...");
+            Identifier.PerformIdentification(tree);
+            if (Reporter.HasErrors) return;
+            WriteLine("Done");
+            WriteLine(TreePrinter.ToString(tree));
 
             //// Type check
             //Write("Type Checking...");

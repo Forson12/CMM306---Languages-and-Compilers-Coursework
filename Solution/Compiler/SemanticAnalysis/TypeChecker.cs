@@ -224,7 +224,7 @@ namespace Compiler.SemanticAnalysis
             PerformTypeChecking(constDeclaration.Expression);
 
             // Assign the inferred type to the const identifier 
-            constDeclarationT = constDeclaration.Expression.Type;
+            // No need to do this as it is inferred automatically
         }
 
 
@@ -503,7 +503,7 @@ namespace Compiler.SemanticAnalysis
         /// <summary>
         /// Carries out type checking on an operation node
         /// </summary>
-        /// <param name="operation">The node to perform type checking on</param>
+        /// <param name="repeat">The node to perform type checking on</param>
         private void PerformTypeCheckingOnRepeatCommand(RepeatCommandNode repeat)
         {
             // Type check the body
@@ -516,14 +516,17 @@ namespace Compiler.SemanticAnalysis
             if (repeat.Condition.Type != StandardEnvironment.BooleanType)
             {
                 Reporter.ReportError(
-                    $"Condition in repeat-until command is not a boolean " +
-                    $"at line {repeat.Position.LineNumber}, column {repeat.Position.PositionInLine}"
+                    $"Condition in repeat-until command is not a boolean " + $"at line {repeat.Position.LineNumber}, column {repeat.Position.PositionInLine}"
                 );
             }
         }
 
 
 
+        /// <summary>
+        /// Carries out type checking on an operation node
+        /// </summary>
+        /// <param name="unlessNode">The node to perform type checking on</param>
         private void PerformTypeCheckingOnUnlessCommand(UnlessCommandNode unlessNode)
         {
             PerformTypeChecking(unlessNode.Condition);
@@ -532,8 +535,7 @@ namespace Compiler.SemanticAnalysis
             if (unlessNode.Condition.Type != StandardEnvironment.BooleanType)
             {
                 Reporter.ReportError(
-                    $"Condition in unless command is not a boolean " +
-                    $"at line {unlessNode.Position.LineNumber}, column {unlessNode.Position.PositionInLine}"
+                    $"Condition in unless command is not a boolean " + $"at line {unlessNode.Position.LineNumber}, column {unlessNode.Position.PositionInLine}"
                 );
             }
         }
