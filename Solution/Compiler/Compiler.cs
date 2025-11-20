@@ -106,10 +106,11 @@ namespace Compiler
             WriteLine(TreePrinter.ToString(tree));
 
             //// Type check
-            //Write("Type Checking...");
-            //Checker.PerformTypeChecking(tree);
-            //if (Reporter.HasErrors) return;
-            //WriteLine("Done");
+            Write("Type Checking...");
+            Checker.PerformTypeChecking(tree);
+            if (Reporter.HasErrors) return;
+            WriteLine("Done");
+            WriteLine(TreePrinter.ToString(tree));
 
             // Code generation
             //Write("Generating code...");

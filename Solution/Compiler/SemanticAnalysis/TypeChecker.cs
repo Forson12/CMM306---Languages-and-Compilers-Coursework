@@ -404,8 +404,7 @@ namespace Compiler.SemanticAnalysis
             if (!(typeDenoter.Identifier.Declaration is SimpleTypeDeclarationNode declaration))
             {
                 Reporter.ReportError($"Unknown type used in declaration " +
-                    $"at line {typeDenoter.Position.LineNumber}, column {typeDenoter.Position.PositionInLine}" +
-                    $": {typeDenoter.Identifier.IdentifierToken.Spelling}");
+                    $"at line {typeDenoter.Position.LineNumber}, column {typeDenoter.Position.PositionInLine}" + $": {typeDenoter.Identifier.IdentifierToken.Spelling}");
             }
             else
                 typeDenoter.Type = declaration;
