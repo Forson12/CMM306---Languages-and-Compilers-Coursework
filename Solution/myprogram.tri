@@ -1,3 +1,4 @@
+!this is an example program
 let local
     int x;
     y == 10

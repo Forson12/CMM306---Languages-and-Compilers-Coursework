@@ -86,43 +86,44 @@ namespace Compiler
             WriteLine("Done");
 
             // Debug: Print tokens 
-            foreach (var token in tokens)
-            {
-                Console.WriteLine(token);
-            }  
+            //foreach (var token in tokens)
+            //{
+            //    Console.WriteLine(token);
+            //}  
 
             // Parse
             Write("Parsing...");
             ProgramNode tree = Parser.Parse(tokens);
             if (Reporter.HasErrors) return;
             WriteLine("Done");
-            WriteLine(TreePrinter.ToString(tree));
+            //WriteLine(TreePrinter.ToString(tree));
 
             // Identify
             Write("Identifying...");
             Identifier.PerformIdentification(tree);
             if (Reporter.HasErrors) return;
             WriteLine("Done");
-            WriteLine(TreePrinter.ToString(tree));
+            //WriteLine(TreePrinter.ToString(tree));
 
             //// Type check
             Write("Type Checking...");
             Checker.PerformTypeChecking(tree);
             if (Reporter.HasErrors) return;
             WriteLine("Done");
-            WriteLine(TreePrinter.ToString(tree));
+            //WriteLine(TreePrinter.ToString(tree));
 
             // Code generation
-            //Write("Generating code...");
-            //TargetCode targetCode = Generator.GenerateCodeFor(tree);
-            //if (Reporter.HasErrors) return;
-            //WriteLine("Done");
+            Write("Generating code...");
+            TargetCode targetCode = Generator.GenerateCodeFor(tree);
+            if (Reporter.HasErrors) return;
+            WriteLine("Done");
+            //WriteLine(TreePrinter.ToString(tree));
 
             //Output
-            //Write("Writing to file...");
-            //Writer.WriteToFiles(targetCode);
-            //if (Reporter.HasErrors) return;
-            //WriteLine("Done");
+            Write("Writing to file...");
+            Writer.WriteToFiles(targetCode);
+            if (Reporter.HasErrors) return;
+            WriteLine("Done");
         }
 
         /// <summary>

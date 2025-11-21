@@ -376,25 +376,6 @@ namespace Compiler.SemanticAnalysis
         }
 
         /// <summary>
-        /// Carries out type checking on a var parameter node
-        /// </summary>
-        /// <param name="varParameter">The node to perform type checking on</param>
-        //private void PerformTypeCheckingOnVarParameter(VarParameterNode varParameter)
-        //{
-        //    PerformTypeChecking(varParameter.Identifier);
-        //    if (!(varParameter.Identifier.Declaration is IVariableDeclarationNode varDeclaration))
-        //    {
-        //        Reporter.ReportError($"Trying to pass something which is not a variable to a function's var parameter " +
-        //            $"at line {varParameter.Position.LineNumber}, column {varParameter.Position.PositionInLine}" +
-        //            $": {varParameter.Identifier.IdentifierToken.Spelling}");
-        //    }
-        //    else
-        //        varParameter.Type = varDeclaration.EntityType;
-        //}
-
-
-
-        /// <summary>
         /// Carries out type checking on a type denoter node
         /// </summary>
         /// <param name="typeDenoter">The node to perform type checking on</param>

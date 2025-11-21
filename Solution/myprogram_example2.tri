@@ -1,0 +1,27 @@
+! Print numbers from n down to 1 if n > 0 and n < MAX
+! Example for Kobina's 2
+ 
+let local
+    int MAX;
+    MAX == 10;
+ 
+    int n;
+in
+    {
+        put('e'); put('n'); put('t'); put('e'); put('r'); put(' ');
+        put('n'); put('u'); put('m'); put('b'); put('e'); put('r'); put(':');
+ 
+        getint(var n);
+ 
+        if n > 0 then
+            if n < MAX then
+                while n > 0 do
+                    {
+                        putint(n); puteol();
+                        n == n - 1
+                    }
+            else
+                pass
+        else
+            pass
+    }

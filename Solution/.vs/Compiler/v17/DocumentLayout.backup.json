@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\compiler.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\compiler.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\semanticanalysis\\typechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\semanticanalysis\\typechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\semanticanalysis\\standardenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\semanticanalysis\\standardenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\tokenization\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\tokenization\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\compiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\compiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\tokenization\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\tokenization\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\semanticanalysis\\declarationidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\semanticanalysis\\declarationidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\nodes\\standardenvironmentnodes\\binaryoperationdeclarationnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\nodes\\standardenvironmentnodes\\binaryoperationdeclarationnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\codegeneration\\codegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|solutionrelative:compiler\\codegeneration\\codegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FBA87512-F6A5-4B7F-89BB-2C2694C2490D}|Compiler\\Compiler.csproj|c:\\users\\2113122\\onedrive - robert gordon university\\masters\\sem 1\\cmm306\\cmm306---languages-and-compilers-coursework\\solution\\compiler\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,12 +33,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 91,
+          "DockedWidth": 121,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "ErrorReporter.cs",
               "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\IO\\ErrorReporter.cs",
               "RelativeDocumentMoniker": "Compiler\\IO\\ErrorReporter.cs",
@@ -62,20 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Compiler.cs",
               "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Compiler.cs",
               "RelativeDocumentMoniker": "Compiler\\Compiler.cs",
               "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Compiler.cs",
               "RelativeToolTip": "Compiler\\Compiler.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAuwG4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAuwHIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T18:37:19.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Position.cs",
               "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Position.cs",
               "RelativeDocumentMoniker": "Compiler\\Position.cs",
@@ -88,85 +76,45 @@
           ]
         },
         {
-          "DockedWidth": 333,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 303,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TokenType.cs",
-              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Tokenization\\TokenType.cs",
-              "RelativeDocumentMoniker": "Compiler\\Tokenization\\TokenType.cs",
-              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Tokenization\\TokenType.cs",
-              "RelativeToolTip": "Compiler\\Tokenization\\TokenType.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAuwDAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T17:40:21.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeclarationIdentifier.cs",
-              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\SemanticAnalysis\\DeclarationIdentifier.cs",
-              "RelativeDocumentMoniker": "Compiler\\SemanticAnalysis\\DeclarationIdentifier.cs",
-              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\SemanticAnalysis\\DeclarationIdentifier.cs",
-              "RelativeToolTip": "Compiler\\SemanticAnalysis\\DeclarationIdentifier.cs",
-              "ViewState": "AgIAABMBAAAAAAAAAAAmwCgBAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:48:25.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BinaryOperationDeclarationNode.cs",
-              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Nodes\\StandardEnvironmentNodes\\BinaryOperationDeclarationNode.cs",
-              "RelativeDocumentMoniker": "Compiler\\Nodes\\StandardEnvironmentNodes\\BinaryOperationDeclarationNode.cs",
-              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Nodes\\StandardEnvironmentNodes\\BinaryOperationDeclarationNode.cs",
-              "RelativeToolTip": "Compiler\\Nodes\\StandardEnvironmentNodes\\BinaryOperationDeclarationNode.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T17:22:59.737Z",
+              "DocumentIndex": 0,
+              "Title": "Compiler",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Compiler.csproj",
+              "RelativeDocumentMoniker": "Compiler\\Compiler.csproj",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Compiler.csproj",
+              "RelativeToolTip": "Compiler\\Compiler.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-21T20:21:53.995Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StandardEnvironment.cs",
-              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\SemanticAnalysis\\StandardEnvironment.cs",
-              "RelativeDocumentMoniker": "Compiler\\SemanticAnalysis\\StandardEnvironment.cs",
-              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\SemanticAnalysis\\StandardEnvironment.cs",
-              "RelativeToolTip": "Compiler\\SemanticAnalysis\\StandardEnvironment.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAADYAAAB1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:48:41.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "TypeChecker.cs",
               "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\SemanticAnalysis\\TypeChecker.cs",
               "RelativeDocumentMoniker": "Compiler\\SemanticAnalysis\\TypeChecker.cs",
               "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\SemanticAnalysis\\TypeChecker.cs",
               "RelativeToolTip": "Compiler\\SemanticAnalysis\\TypeChecker.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAkwD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwHcBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:27:44.045Z",
+              "WhenOpened": "2025-11-21T20:14:50.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Tokenizer.cs",
-              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Tokenization\\Tokenizer.cs",
-              "RelativeDocumentMoniker": "Compiler\\Tokenization\\Tokenizer.cs",
-              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\Tokenization\\Tokenizer.cs",
-              "RelativeToolTip": "Compiler\\Tokenization\\Tokenizer.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAAwIgAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CodeGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\CodeGeneration\\CodeGenerator.cs",
+              "RelativeDocumentMoniker": "Compiler\\CodeGeneration\\CodeGenerator.cs",
+              "ToolTip": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution\\Compiler\\CodeGeneration\\CodeGenerator.cs",
+              "RelativeToolTip": "Compiler\\CodeGeneration\\CodeGenerator.cs",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAmwJUBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T17:41:33.278Z",
+              "WhenOpened": "2025-11-21T19:17:29.068Z",
               "EditorCaption": ""
             }
           ]

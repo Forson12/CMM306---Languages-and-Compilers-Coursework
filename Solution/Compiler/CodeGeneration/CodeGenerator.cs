@@ -1,5 +1,6 @@
 ﻿using Compiler.IO;
 using Compiler.Nodes;
+using Compiler.Nodes.CommandNodes;
 using System.Reflection;
 using static Compiler.CodeGeneration.TriangleAbstractMachine;
 using static System.Reflection.BindingFlags;
@@ -387,5 +388,58 @@ namespace Compiler.CodeGeneration
             else
                 Debugger.Write("Error: The operator declaration isn't one of the built in operations and you should have picked this problem up during type checking");
         }
+
+        /// <summary>
+        /// Generates code for an repeat node
+        /// </summary>
+        /// <param name="operation">The node to generate code for</param>
+
+        private void GenerateCodeForRepeatCommand(RepeatCommandNode repeat)
+        {
+            Debugger.Write("Generating code for Repeat Command");
+
+            Address startLabel = code.NextAddress;
+
+            // body
+            GenerateCodeFor(repeat.Body);
+
+            // condition
+            GenerateCodeFor(repeat.Condition);
+
+            // jump back if condition is FALSE
+            code.AddInstruction(
+                OpCode.JUMPIF,
+                Register.CB,
+                FalseValue,
+                startLabel
+            );
+        }
+
+        /// Generates code for an unless node
+        /// </summary>
+        /// <param name="operation">The node to generate code for</param>
+        private void GenerateCodeForUnlessCommand(UnlessCommandNode unlessCommandd)
+        {
+            Debugger.Write("Generating code for Unless Command");
+
+            // Evaluate condition
+            GenerateCodeFor(unlessCommandd.Condition);
+
+            // Skip body if TRUE
+            Address end = code.NextAddress;
+            code.AddInstruction(
+                OpCode.JUMPIF,
+                Register.CB,
+                TrueValue,
+                0     // placeholder
+            );
+
+            // Body C
+            GenerateCodeFor(unlessCommandd.Body);
+
+            // Patch
+            code.PatchInstructionToJumpHere(end);
+        }
+
     }
 }
