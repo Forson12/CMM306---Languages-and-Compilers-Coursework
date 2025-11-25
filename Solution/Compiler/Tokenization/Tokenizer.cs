@@ -180,28 +180,28 @@ namespace Compiler.Tokenization
             }
             else if (Reader.Current == '"')
             {
-                // Take the opening "
+                // Opening "
                 TakeIt();
 
-                //the closing '
-                if (Reader.Current == '"' || Reader.Current != '\n' || Reader.Current != default(char))
+                // The literal must contain exactly ONE character
+                if (Reader.Current == '"' || Reader.Current == '\n' || Reader.Current == default(char))
                 {
-                    // Empty "" or in this case an invalid char
-                    return TokenType.Error;
+                    return TokenType.Error;  // empty "" or invalid
                 }
 
+                // Take exactly one character
                 TakeIt();
 
-                // Expecting closing " 
-                if (Reader.Current == '"')
+                // After taking one character, next must be closing "
+                if (Reader.Current != '"')
                 {
-                    TakeIt();
-                    return TokenType.CharLiteral;
+                    return TokenType.Error;  // too many chars or missing closing "
                 }
-                else 
-                {
-                    return TokenType.Error;
-                }
+
+                // Take closing "
+                TakeIt();
+
+                return TokenType.CharLiteral;
             }
             else if (Reader.Current == default(char))
             {

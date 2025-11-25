@@ -1,6 +1,7 @@
 ﻿using Compiler.IO;
 using Compiler.Nodes;
 using Compiler.Nodes.CommandNodes;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -43,6 +44,7 @@ namespace Compiler.SemanticAnalysis
         /// <param name="node">The node to perform type checking on</param>
         private void PerformTypeChecking(IAbstractSyntaxTreeNode node)
         {
+            //Console.WriteLine("DISPATCH: " + node.GetType().Name);
             if (node is null)
                 // Shouldn't have null nodes - there is a problem with your parsing
                 Debugger.Write("Tried to perform type checking on a null tree node");
@@ -110,7 +112,21 @@ namespace Compiler.SemanticAnalysis
         private void PerformTypeCheckingOnCallCommand(CallCommandNode callCommand)
         {
             PerformTypeChecking(callCommand.Identifier);
-            PerformTypeChecking(callCommand.Parameter);
+
+            // Do a null check in here to only perform the type check if one actually exists
+            if (callCommand.Parameter != null)
+            {
+                PerformTypeChecking(callCommand.Parameter);
+            }
+
+            // null check the declaration as well 
+            if (callCommand.Identifier.Declaration == null)
+            {
+                Reporter.ReportError(
+                    $"{callCommand.Identifier.IdentifierToken.Spelling} is not declared" + callCommand.Position);
+                return;
+            }
+
             if (!(callCommand.Identifier.Declaration is FunctionDeclarationNode functionDeclaration))
             {
                 Reporter.ReportError($"{callCommand.Identifier.IdentifierToken.Spelling} is being used as a function but is not one " +
@@ -118,7 +134,7 @@ namespace Compiler.SemanticAnalysis
             }
             else if (GetNumberOfArguments(functionDeclaration.Type) == 0)
             {
-                if (!(callCommand.Parameter is BlankParameterNode))
+                if (!(callCommand.Parameter is null || callCommand.Parameter is BlankParameterNode))
                 {
                     Reporter.ReportError($"{functionDeclaration.Name} takes no arguments but is being called with some " +
                         $"at line {callCommand.Position.LineNumber}, column {callCommand.Position.PositionInLine}");
@@ -126,14 +142,18 @@ namespace Compiler.SemanticAnalysis
             }
             else
             {
-                if (callCommand.Parameter is BlankParameterNode)
+                if (callCommand.Parameter is null || callCommand.Parameter is BlankParameterNode)
                 {
                     Reporter.ReportError($"{functionDeclaration.Name} takes an argument but is being called without any " +
                         $"at line {callCommand.Position.LineNumber}, column {callCommand.Position.PositionInLine}");
                 }
                 else
                 {
-                    if (GetArgumentType(functionDeclaration.Type, 0) != callCommand.Parameter.Type)
+                    if (callCommand.Parameter.Type == null)
+                    {
+                        Reporter.ReportError("Argument type could not be determined." + callCommand.Position);
+                    }
+                    else if (GetArgumentType(functionDeclaration.Type, 0) != callCommand.Parameter.Type)
                     {
                         Reporter.ReportError($"{functionDeclaration.Name} expects a " +
                             $"{functionDeclaration.Type.Parameters[0].type.Name} as a parameter but was given a {callCommand.Parameter.Type.Name} " +
@@ -373,6 +393,24 @@ namespace Compiler.SemanticAnalysis
         {
             PerformTypeChecking(expressionParameter.Expression);
             expressionParameter.Type = expressionParameter.Expression.Type;
+        }
+
+
+        /// <summary>
+        /// Carries out type checking on a var parameter node
+        /// </summary>
+        /// <param name="varParameter">The node to perform type checking on</param>
+        private void PerformTypeCheckingOnVarParameter(VarParameterNode varParameter)
+        {
+            PerformTypeChecking(varParameter.Identifier);
+            if (!(varParameter.Identifier.Declaration is IVariableDeclarationNode varDeclaration))
+            {
+                Reporter.ReportError($"Trying to pass something which is not a variable to a function's var parameter " +
+                    $"at line {varParameter.Position.LineNumber}, column {varParameter.Position.PositionInLine}" +
+                    $": {varParameter.Identifier.IdentifierToken.Spelling}");
+            }
+            else
+                varParameter.Type = varDeclaration.EntityType;
         }
 
         /// <summary>

@@ -279,7 +279,7 @@ namespace Compiler.SyntacticAnalysis
             }
 
             // First identifier — could be:
-            //   - type-denoter for a var declaration
+            //   - type denoter for a var declaration
             //   - constant name for a const declaration
             IdentifierNode firstId = ParseIdentifier();
 
@@ -417,7 +417,6 @@ namespace Compiler.SyntacticAnalysis
         }
 
 
-
         /// <summary>
         /// Parses a parameter
         /// </summary>
@@ -425,26 +424,22 @@ namespace Compiler.SyntacticAnalysis
         private IParameterNode ParseParameter()
         {
             Debugger.Write("Parsing Parameter");
-            //switch (CurrentToken.Type)
-            //{
-            //    case Identifier:
-            //    case IntLiteral:
-            //    case CharLiteral:
-            //    case Operator:
-            //    case LeftBracket:
-            //        return ParseExpressionParameter();
-            //    case Var:
-            //        return ParseVarParameter();
-            //    case RightBracket:
-            //        return new BlankParameterNode(CurrentToken.Position);
-            //    default:
-            //        return new ErrorNode(CurrentToken.Position);
-            //}
 
-            if(CurrentToken.Type == RightBracket)
+            // Case 1: blank parameter ()
+            if (CurrentToken.Type == RightBracket)
                 return new BlankParameterNode(CurrentToken.Position);
 
-            // Otherwise return a normal expression 
+            // Case 2: var parameter: var <identifier>
+            if (CurrentToken.Type == TokenType.Var)
+            {
+                Accept(TokenType.Var);
+
+                // Next must be an identifier
+                IdentifierNode id = ParseIdentifier();
+                return new VarParameterNode(id, id.Position);
+            }
+
+            // Case 3: expression parameter
             return ParseExpressionParameter();
         }
 

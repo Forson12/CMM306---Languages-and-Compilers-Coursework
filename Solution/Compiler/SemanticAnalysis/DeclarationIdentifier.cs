@@ -322,5 +322,14 @@ namespace Compiler.SemanticAnalysis
             PerformIdentification(node.Condition);
             PerformIdentification(node.Body);
         }
+
+        /// <summary>
+        /// Carries out identification on a var parameter node
+        /// </summary>
+        /// <param name="varParameter">The node to perform identification on</param>
+        private void PerformIdentificationOnVarParameter(VarParameterNode varParameter)
+        {
+            PerformIdentification(varParameter.Identifier);
+        }
     }
 }
