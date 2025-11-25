@@ -539,8 +539,6 @@ namespace Compiler.SemanticAnalysis
             }
         }
 
-
-
         /// <summary>
         /// Carries out type checking on an operation node
         /// </summary>

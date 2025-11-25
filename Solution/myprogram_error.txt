@@ -1,8 +1,0 @@
-!this is not an example program
-
-let local
-    int n;
-in
-{
-    getint(n);   ! ERROR: should be getint(var n)
-}

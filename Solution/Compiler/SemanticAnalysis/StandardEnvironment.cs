@@ -48,7 +48,7 @@ namespace Compiler.SemanticAnalysis
             }.ToImmutableDictionary();
         }
 
-        // Types (correct names!)
+        // Types
         public static SimpleTypeDeclarationNode IntegerType { get; } = new SimpleTypeDeclarationNode("int", INTEGER);
 
         public static SimpleTypeDeclarationNode CharType { get; } = new SimpleTypeDeclarationNode("char", CHARACTER);

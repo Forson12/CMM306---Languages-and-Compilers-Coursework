@@ -1,0 +1,8 @@
+!this is not an example program
+
+let local
+    int x;
+in
+{
+    x == "a";   ! ERROR: assigning char to int
+}

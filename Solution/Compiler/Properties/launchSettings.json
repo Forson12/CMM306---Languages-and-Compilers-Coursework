@@ -2,7 +2,7 @@
   "profiles": {
     "Compiler": {
       "commandName": "Project",
-      "commandLineArgs": "myprogram_error_2.tri myprogram_example3.tam myprogram_example3.txt",
+      "commandLineArgs": "myprogram.tri myprogram_example3.tam myprogram_example3.txt",
       "workingDirectory": "C:\\Users\\2113122\\OneDrive - Robert Gordon University\\MASTERS\\SEM 1\\CMM306\\CMM306---Languages-and-Compilers-Coursework\\Solution"
     }
   }
